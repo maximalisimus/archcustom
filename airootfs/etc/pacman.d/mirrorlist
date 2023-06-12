@@ -1,0 +1,16 @@
+##
+## Arch Linux repository mirrorlist
+## Filtered by mirror score from mirror status page
+## Generated on 2020-04-09
+##
+
+## Russia
+Server = http://mirror.yandex.ru/archlinux/$repo/os/$arch
+## Russia
+Server = https://mirror.yandex.ru/archlinux/$repo/os/$arch
+## Russia
+Server = http://mirror.truenetwork.ru/archlinux/$repo/os/$arch
+## Russia
+Server = http://mirror.rol.ru/archlinux/$repo/os/$arch
+## Russia
+Server = https://mirror.rol.ru/archlinux/$repo/os/$arch

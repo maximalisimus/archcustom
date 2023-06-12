@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#
+# ~/.xsession
+#
+# E

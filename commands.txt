@@ -1,0 +1,68 @@
+
+# cp -r /usr/share/archiso/configs/profile/ archlive
+# releng
+# baseline
+$ cp -r /usr/share/archiso/configs/releng/ ./
+
+By default, there really are no settings at all - 
+neither the user's "skel", nor the "release" version information, 
+nor the "sudo" rights settings, nor even the usual automatic login without a password, 
+and even "customize_airootfs.sh " basic settings after installation in the working directory 
+before assembling the root of the image file system and assembling the image itself.
+
+
+
+
+
+Edit to:
+1) mkarchiso
+2) profiledef.sh
+3) packages.x86_64
+4) airootfs
+5) pacman.conf
+
+
+
+1) mkarchiso:
+search pacstrap install command and insert "-i" in two strings.
+
+2) profiledef.sh:
+iso_name
+
+add file_permissions
+  ["/etc/gshadow"]="0:0:0400"
+
+3) packages.x86_64
+Line by line, separate the packages that you need in the final distribution. 
+Comment out everything you don't need. 
+You can make several different sections of packages marked with comments, what are these sections.
+
+4) airootfs:
+As a rule, any administrative tasks that you normally do after a new installation 
+can be performed in a script archlive/airootfs/root/customize_airootfs.sh, 
+except for installing packages. 
+The script must be written from the perspective of the new environment, 
+so / in the script means the root of the ISO image that is being created.
+
+The "airotfs" folder is like the root directory of your future system 
+and all settings and how your future system will look depend on it.
+
+5) pacman.conf:
+The future settings of the package manager depend on it in 2 places during 
+the build of the distribution kit and in the very future distribution kit 
+already inside the image.
+
+
+Build:
+$ sudo su
+$ mkdir -p ./work ./out
+$ pacman -Scc
+$ ./mkarchiso -v -w ./work/ -o ./out/ ./
+
+Clear:
+$ rm -rf ./work/*
+
+ISO to ./out folder.
+
+
+
