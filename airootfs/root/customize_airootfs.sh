@@ -44,12 +44,3 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 systemctl enable choose-mirror.service
 systemctl set-default multi-user.target
 
-# Variable Grub Theme
-_grub_theme_destiny="https://github.com/maximalisimus/Archivers-Configs-Linux/releases/download/v1.0/grub-theme-destiny.tar.gz"
-_grub_theme_destiny_pkg="/root/grub-theme-destiny.tar.gz"
-
-# Setup Grub Theme
-mkdir -p /boot/grub/themes/
-wget "${_grub_theme_destiny[*]}" -O "${_grub_theme_destiny_pkg[*]}"
-tar -C "/boot/grub/themes/" -xvzf "${_grub_theme_destiny_pkg[*]}"
-rm -rf "${_grub_theme_destiny_pkg[*]}"
