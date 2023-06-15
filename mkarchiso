@@ -51,7 +51,6 @@ efiboot_files=()
 # adapted from GRUB_EARLY_INITRD_LINUX_STOCK in https://git.savannah.gnu.org/cgit/grub.git/tree/util/grub-mkconfig.in
 readonly ucodes=('intel-uc.img' 'intel-ucode.img' 'amd-uc.img' 'amd-ucode.img' 'early_ucode.cpio' 'microcode.cpio')
 
-
 # Show an INFO message
 # $1: message string
 _msg_info() {
@@ -603,7 +602,7 @@ _make_bootmode_uefi-ia32.grub.esp() {
 
     # Prepare configuration files
     _run_once _make_common_bootmode_grub_cfg
-
+	
     # Create EFI binary
     # Module list from https://bugs.archlinux.org/task/71382#comment202911
     grubmodules=(all_video at_keyboard boot btrfs cat chain configfile echo efifwsetup efinet ext2 f2fs fat font \

@@ -16,11 +16,8 @@ qemu-system-x86_64 \
 -netdev user,id=wan \
 -boot menu=on \
 -hda hard.qcow \
--L . \
--drive file=/usr/share/ovmf/x64/OVMF_CODE.fd,if=pflash,format=raw,unit=0,readonly=on \
 -cdrom ./out/archcustom-2023.06.15-x86_64.iso
 # -cdrom ./out/archcustom-2022.10.23-x86_64.iso \
-# -cdrom /home/mikl/vbox/archlinux-2020.08.01-x86_64.iso \
 # -snapshot \
 
 #-L . \

@@ -2,5 +2,5 @@
 !.gitignore
 /work
 /out
-*.qcow
+hard.qcow
 

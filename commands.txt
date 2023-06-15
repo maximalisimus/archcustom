@@ -26,6 +26,8 @@ Edit to:
 1) mkarchiso:
 search pacstrap install command and insert "-i" in two strings.
 
+
+
 2) profiledef.sh:
 iso_name
 
@@ -63,6 +65,7 @@ Clear:
 $ rm -rf ./work/*
 
 ISO to ./out folder.
+
 
 
 
